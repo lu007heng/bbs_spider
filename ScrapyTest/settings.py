@@ -14,7 +14,10 @@ SPIDER_MODULES = ['ScrapyTest.spiders']
 NEWSPIDER_MODULE = 'ScrapyTest.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'ScrapyTest (+http://www.yourdomain.com)'
+# USER_AGENT = 'ScrapyTest (+http://www.yourdomain.com)'
 
+ITEM_PIPELINES={
+    'ScrapyTest.pipelines.SQLitePipeline': 400,
+}
 
 DOWNLOAD_DELAY = 2
