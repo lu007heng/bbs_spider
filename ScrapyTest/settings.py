@@ -20,4 +20,6 @@ ITEM_PIPELINES={
     'ScrapyTest.pipelines.SQLitePipeline': 400,
 }
 
+DUPEFILTER_CLASS = 'ScrapyTest.filters.DuplicateUrlFilter'
+
 DOWNLOAD_DELAY = 2
