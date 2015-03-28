@@ -15,3 +15,6 @@ NEWSPIDER_MODULE = 'ScrapyTest.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'ScrapyTest (+http://www.yourdomain.com)'
+
+
+DOWNLOAD_DELAY = 2
