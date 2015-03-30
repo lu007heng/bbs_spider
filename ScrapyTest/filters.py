@@ -2,13 +2,14 @@ import sqlite3
 
 from scrapy.dupefilter import RFPDupeFilter
 
+import settings
 
 class DuplicateUrlFilter(RFPDupeFilter):
 
     def __init__(self, path=None, debug=False):
         self.url_seen = set()
         # load all the urls in db into memory
-        conn = sqlite3.connect('data.sqlite')
+        conn = sqlite3.connect(settings.DATABASE['path'])
         cursor = conn.cursor()
         cursor.execute('''select url from post''')
         all_urls = cursor.fetchall()

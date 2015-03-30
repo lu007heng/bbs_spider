@@ -19,6 +19,9 @@ NEWSPIDER_MODULE = 'ScrapyTest.spiders'
 # DUPEFILTER_CLASS = 'ScrapyTest.filters.DuplicateUrlFilter'
 # DUPEFILTER_DEBUG = True
 
+DATABASE = {
+    'path': 'data.sqlite',
+}
 ITEM_PIPELINES = {
     'ScrapyTest.pipelines.SQLitePipeline': 400,
 }

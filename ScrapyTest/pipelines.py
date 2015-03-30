@@ -11,13 +11,15 @@ from os import path
 from scrapy import signals
 from scrapy.xlib.pydispatch import dispatcher
 
+import settings
+
 class ScrapytestPipeline(object):
     def process_item(self, item, spider):
         return item
 
 
 class SQLitePipeline(object):
-    file_name = 'data.sqlite'
+    file_name = settings.DATABASE['path']     # 'data.sqlite'
 
     def __init__(self):
         self.conn = None
@@ -49,5 +51,5 @@ class SQLitePipeline(object):
             self.conn.execute('insert into post values(?,?,?)',
                               (item['url'], item['title'], item['content']))
         except Exception, e:
-            print 'Exception:',e.message
+            print 'Exception:', e.message
         return item
