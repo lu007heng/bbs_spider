@@ -2,7 +2,7 @@
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
-
+from scrapy.http import Request
 from ScrapyTest.items import NjuPostItem
 
 
@@ -22,3 +22,6 @@ class NjuSpider(CrawlSpider):
         post['title'] = 'to_do'
         post['content'] = 'to_do'
         return post
+
+    def make_requests_from_url(self, url):
+        return Request(url, callback=self.parse, dont_filter=False)

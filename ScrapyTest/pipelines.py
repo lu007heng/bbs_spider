@@ -49,5 +49,5 @@ class SQLitePipeline(object):
             self.conn.execute('insert into post values(?,?,?)',
                               (item['url'], item['title'], item['content']))
         except Exception, e:
-            print 'Failed to insert item: ' + item['url'] + "; Since:" + e
+            print 'Exception:',e.message
         return item

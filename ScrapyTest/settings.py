@@ -16,10 +16,15 @@ NEWSPIDER_MODULE = 'ScrapyTest.spiders'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'ScrapyTest (+http://www.yourdomain.com)'
 
-ITEM_PIPELINES={
+# DUPEFILTER_CLASS = 'ScrapyTest.filters.DuplicateUrlFilter'
+# DUPEFILTER_DEBUG = True
+
+ITEM_PIPELINES = {
     'ScrapyTest.pipelines.SQLitePipeline': 400,
 }
 
-DUPEFILTER_CLASS = 'ScrapyTest.filters.DuplicateUrlFilter'
+DOWNLOADER_MIDDLEWARES = {
+    'ScrapyTest.middlewares.IgnoreDuplicates': 543,
+}
 
 DOWNLOAD_DELAY = 2
