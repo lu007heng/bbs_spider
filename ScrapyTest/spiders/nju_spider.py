@@ -2,7 +2,6 @@
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
-from scrapy.http import Request
 from ScrapyTest.items import NjuPostItem
 
 
@@ -20,8 +19,11 @@ class NjuSpider(CrawlSpider):
         post = NjuPostItem()
         post['url'] = response.url
         post['title'] = 'to_do'
-        post['content'] = 'to_do'
+        
+        '''
+        Since many website in china said they use gb2313 code, but actually gbk is used
+        '''
+        post['content'] = response.body.decode('gbk').encode('utf-8')
+        print post['content']
+        post['time'] = 'to_do'
         return post
-
-    def make_requests_from_url(self, url):
-        return Request(url, callback=self.parse, dont_filter=False)

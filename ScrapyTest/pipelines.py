@@ -13,9 +13,12 @@ from scrapy.xlib.pydispatch import dispatcher
 
 import settings
 
+
 class ScrapytestPipeline(object):
+
     def process_item(self, item, spider):
         return item
+
 
 
 class SQLitePipeline(object):

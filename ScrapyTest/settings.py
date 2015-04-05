@@ -23,11 +23,11 @@ DATABASE = {
     'path': 'data.sqlite',
 }
 ITEM_PIPELINES = {
-    'ScrapyTest.pipelines.SQLitePipeline': 400,
+    # 'ScrapyTest.pipelines.SQLitePipeline': 400,
 }
 
 DOWNLOADER_MIDDLEWARES = {
-    'ScrapyTest.middlewares.IgnoreDuplicates': 543,
+    # 'ScrapyTest.middlewares.IgnoreDuplicates': 543,
 }
 
 DOWNLOAD_DELAY = 2
