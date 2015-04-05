@@ -14,3 +14,4 @@ class NjuPostItem(scrapy.Item):
     url = scrapy.Field()
     title = scrapy.Field()
     content = scrapy.Field()
+    time = scrapy.Field()
