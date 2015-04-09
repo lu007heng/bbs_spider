@@ -1,2 +1,2 @@
-# bbs_spider
-A spider to fetch posts on bbs of Nanjing University, based on scrapy
+# i_seek
+A search engine to help people find love
